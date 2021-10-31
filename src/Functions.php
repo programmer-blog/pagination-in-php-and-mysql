@@ -11,7 +11,7 @@
       $this->db = $this->dbObj->db_connect();
     }
 
-    public function find_customers($limit=0, $offset=0) {
+    public function find_users($limit=0, $offset=0) {
       
       $sql = "SELECT * FROM users ";
       $sql .= "ORDER BY last_name ASC, first_name ASC";
@@ -28,7 +28,7 @@
       return $result;
     }
 
-    public function count_customers() {
+    public function count_users() {
       $sql = "SELECT COUNT(*) FROM users ";
       $result = $this->dbObj->db_query($this->db, $sql);
       $array =  $this->dbObj->db_fetch_assoc($result);

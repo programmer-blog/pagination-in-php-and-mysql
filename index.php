@@ -11,10 +11,10 @@
     $dbObj = new Database();
     $db = $dbObj->db_connect();
     $utility = new Functions($dbObj);
-    $total_count = $utility->count_customers();
+    $total_count = $utility->count_users();
     $page = $_GET['page'] ?? 1;
     $pagination = new Pagination($total_count, $page, 20);
-    $users = $utility->find_customers($pagination->per_page, $pagination->offset());
+    $users = $utility->find_users($pagination->per_page, $pagination->offset());
 
 ?>
 
